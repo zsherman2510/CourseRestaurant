@@ -1,12 +1,17 @@
 * {
     margin: 0px;
     padding: 0px;
+
+}
+
+body {
     overflow: hidden;
 }
 
 body .container {
     padding: 20px 10%;
     position: relative;
+
 }
 
 nav {
@@ -26,27 +31,29 @@ nav .logo {
 }
 
 #menu_mobile {
-    overflow: hidden;
-    display: flex;
     position: absolute;
     padding: auto 20px;
     top: 100px;
     background-color: #ddd;
-    right: -800px;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
     width: 100%;
     flex-direction: column;
     list-style: none;
-    transition: right .4s ease-in-out;
-
+    transition: right.4s ease-in-out;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
-nav #menu{
+
+nav #menu {
     list-style: none;
     display: flex;
     visibility: hidden;
+    justify-content: space-around;
+
 }
 
 .menu_show {
-    right: 0px !important;
+    transform: translate(0, 0) !important;
 }
 
 .menu_link {
@@ -72,13 +79,16 @@ nav #hamburger {
 }
 
 @media only screen and (min-width: 768px) {
-    nav #menu_mobile{
+    nav #menu_mobile {
+        visibility: hidden;
+        
+    }
+
+    nav #hamburger {
         display: none;
     }
-    nav #hamburger{
-        display: none;
-    }
-    nav #menu{
+
+    nav #menu {
         visibility: visible;
     }
 }

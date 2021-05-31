@@ -11,6 +11,12 @@ body {
 body .container {
     padding: 20px 10%;
     position: relative;
+    background-image: url('/images/hero_1.jpg');
+    height: 80vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
 }
 
